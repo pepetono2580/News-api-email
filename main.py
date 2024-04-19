@@ -22,8 +22,6 @@ message = "Subject: Today's news" + "\n"
 for article in content["articles"][:20]:
     if article["title"] is not None:
         message = message + article["title"] + "\n" + article["description"] + "\n" + article["url"] + 2*"\n"
-        # print("Title: ", article["title"])
-        # print("Description: ", article["description"])
 
 message = message.encode("UTF-8")
 send_email(message)
